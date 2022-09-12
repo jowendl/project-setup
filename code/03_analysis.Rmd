@@ -1,0 +1,29 @@
+---
+title: "Untitled"
+output:
+  html_document:
+    code_folding: hide
+author: Johannes Wendl
+date: "`r format(Sys.Date(), format='%Y-%m-%d')`"
+knit: (function(input, ...) {
+    rmarkdown::render(
+      input,
+      output_dir = here::here("output/"))
+  })
+---
+
+```{r setup, message=FALSE, warning=TRUE}
+# Setup
+source(here::here("code/00_requirements.R"))
+
+# read preprocessed data
+dat <- readRDS(file = here("data/processed/dat.Rds"))
+```
+
+
+```{r save-results}
+# Save models and results
+save(list = c(), # add character vector containing the names of objects to be saved
+        file = here("output/results.RData"))
+```
+

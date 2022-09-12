@@ -1,0 +1,23 @@
+---
+title: "Untitled"
+output:
+  html_document:
+    code_folding: hide
+author: Johannes Wendl
+date: "`r format(Sys.Date(), format='%Y-%m-%d')`"
+knit: (function(input, ...) {
+    rmarkdown::render(
+      input,
+      output_dir = here::here("output/"))
+  })
+---
+
+
+```{r msetup, message=FALSE, warning=TRUE}
+# Setup
+source(here::here("code/00_requirements.R"))
+
+# Load multiple R Objects with results from analysis saved as .RData
+load(file = here("output/results.RData"))
+```
+
